@@ -187,29 +187,29 @@ export default {
     <footer>
         <section id="shops">
             <div class="container">
-                <div class="shop_card" v-for="shop in shops">
+                <a :href="shop.url" class="shop_card" v-for="shop in shops">
                     <img :src="shop.icon" :alt="shop.name">
-                    <p>{{shop.name}}</p>
-                </div>
+                    <p>{{shop.name.toUpperCase()}}</p>
+                </a>
             </div>
         </section>
         <section id="terms_and_conditions">
             <div class="container">
-                <div>
-                    <ul v-for="(term, index) in terms">
+                <div id="terms_list">
+                    <ul v-for="(term, index) in terms" :key="index">
                         <h4>{{term.listTitle.toUpperCase()}}</h4>
-                        <li v-for="(item, index) in term.list"><a href="{{item.url}}">{{item.element}}</a></li>
+                        <li v-for="(item, index) in term.list" :key="index"><a href="{{item.url}}">{{item.element}}</a></li>
                     </ul>
                 </div>
-                <div>
+                <div class="dc_bg">
                     <img src="/dc-logo-bg.png" alt="">
                 </div>
             </div>
         </section>
         <section id="contacts">
             <div class="container">
-                <div><a href="">SIGN-UP NOW</a></div>
-                <div>
+                <a href="" id="sign_up">SIGN-UP NOW!</a>
+                <div id="follow">
                     <h3>FOLLOW US</h3>
                     <a :href="platform.url" v-for="(platform,index) in social">
                         <img :src="platform.icon" :alt="platform.name">
@@ -219,6 +219,98 @@ export default {
         </section>
     </footer>
 </template>
-<style lang="">
-    
+<style lang="scss" scoped>
+    footer{
+        background: url(/footer-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center ;
+        #shops{
+            background-color: rgb(2, 130, 249);
+            padding: 35px 25px;
+
+            .container{
+                display: flex;
+                justify-content: space-between;  
+            }
+            .shop_card{
+                width: calc(100% / 5 - 25px);
+                display: flex;
+                align-items: center;
+            }
+            img{
+                max-width: 50px;
+                max-height: 50px;
+            }
+            p{
+                color:white;
+                padding-left: 10px;
+            }
+        }
+        #terms_and_conditions{
+
+            height: 350px;
+            padding-top: 40px;
+            overflow: hidden;
+            
+            .container{
+                display: flex;
+                justify-content: space-between;
+                height: 100%;
+            }
+            #terms_list{
+                display: flex;
+                flex-wrap: wrap;
+                flex-flow: column wrap;
+                height: 100%;
+            }
+            ul{
+                margin: 0px 10px;
+            }
+            h4{
+                color: white;
+                margin: 15px 0px;
+            }
+            a{
+                color: grey;
+                font-size: 12px;
+            }
+            a:hover{
+                text-decoration: underline;
+                color: white;
+            }
+            .dc_bg{
+                height: 350px;
+            }
+            .dc_bg img{
+                transform: translate(0px,-150px);
+
+            }
+        }
+        #contacts{
+            padding: 20px;
+            background-color: rgb(48, 48, 48);
+            #sign_up{
+                border: 2px solid rgb(2, 130, 249) ;
+                color: white;
+            }
+            .container,
+            #follow{
+                display: flex;
+                justify-content: space-between; 
+                align-items: center;
+                
+                h3{
+                    color:rgb(2, 130, 249) ;
+                    padding-right: 20px;
+                }
+                a{
+                    padding: 10px;
+                }
+                img{
+                    height: 30px;
+                }
+            }
+        }
+    }
 </style>

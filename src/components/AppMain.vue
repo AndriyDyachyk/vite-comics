@@ -15,6 +15,12 @@ export default {
         </div>
     </main>
 </template>
-<style lang="">
-    
+<style lang="scss" scoped>
+    main{
+        background-color: rgb(28, 28, 28);
+        color: white;
+        margin-top: 85px;
+        padding: 40px;
+        height: calc(100vh - 650px);
+    }
 </style>
