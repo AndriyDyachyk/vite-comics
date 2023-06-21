@@ -248,9 +248,8 @@ export default {
             }
         }
         #terms_and_conditions{
-
             height: 350px;
-            padding-top: 40px;
+            padding: 20px 0px;
             overflow: hidden;
             
             .container{
@@ -284,7 +283,6 @@ export default {
             }
             .dc_bg img{
                 transform: translate(0px,-150px);
-
             }
         }
         #contacts{
