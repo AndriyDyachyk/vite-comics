@@ -198,7 +198,7 @@ export default {
                 <div id="terms_list">
                     <ul v-for="(term, index) in terms" :key="index">
                         <h4>{{term.listTitle.toUpperCase()}}</h4>
-                        <li v-for="(item, index) in term.list" :key="index"><a href="{{item.url}}">{{item.element}}</a></li>
+                        <li v-for="(item, index) in term.list" :key="index"><a :href="item.url">{{item.element}}</a></li>
                     </ul>
                 </div>
                 <div class="dc_bg">

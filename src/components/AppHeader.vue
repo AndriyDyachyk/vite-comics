@@ -62,7 +62,7 @@ export default {
 <template lang="">
     <header>
         <div class="container">
-            <a><img src="/dc-logo.png" alt="" class="logo"></a>
+            <a href=""><img src="/dc-logo.png" alt="" class="logo"></a>
             <ul>
                 <li v-for="(menu, index) in navBarMenu" @mouseover="menu.active = true" @mouseout="menu.active = false" :class="[menu.active === true ? 'active' : '']" :key="index">
                     <a :href="menu.url" >
